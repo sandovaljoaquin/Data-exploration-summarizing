@@ -3,3 +3,32 @@ title: "r-data-exploration"
 format: html
 editor: visual
 ---
+
+```{r}
+library(tidyr)
+library(skimr)
+library(GGally)
+View(diamonds)
+
+
+#Explore data set 
+
+names(diamonds) 
+dim(diamonds) 
+summary(diamonds)
+head(diamonds)
+tail(diamonds)
+skimr::skim(diamonds)
+
+#Create a basic ggplot scatterplot of diamond price as a function of size 
+
+ggplot(data = diamonds, aes(x = carat, y = price  ))+ 
+  geom_jitter() 
+
+#Create a histogram 
+
+ggplot(data = diamonds, aes(x = carat))+ 
+  geom_histogram() 
+
+
+```
